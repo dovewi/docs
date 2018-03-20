@@ -1,5 +1,5 @@
 ---
-title: Docs | Parse
+title: 文档 | Parse
 permalink: index.html
 layout: docs
 
@@ -7,8 +7,8 @@ layout: docs
 
 <div class="container padding-top-40 padding-bottom-50" data-nav-waypoint>
   <div class="copy-block">
-      <h3 class="h3 h3--blue margin-bottom-10">The more you know.</h3>
-      <p class="margin-top-10">We’ve got comprehensive guides for each platform that should help out with anything you need. You can also take a look at the detailed API references and tutorials for a better idea of how it all comes together.</p>
+      <h3 class="h3 h3--blue margin-bottom-10">了解更多.</h3>
+      <p class="margin-top-10">我们已经为您准备了您需要的各个平台的入门文档. 您也可以同时通过查看API文档和教程获得更好的方案.</p>
   </div>
 
   <div class="docs-platforms">
@@ -152,7 +152,7 @@ layout: docs
 
       <div class="docs-platform">
           <header class="docs-platform__header">
-              <span class="docs-platform__name">Cloud Code</span>
+              <span class="docs-platform__name">Cloud Code(云代码)</span>
               <svg class="icon icon-cloudcode"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#cloudcode"></use></svg>
           </header>
           <ul class="docs-platform__links">
