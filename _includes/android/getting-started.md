@@ -1,4 +1,4 @@
-# Getting Started
+# 新手入门
 
 Note that we support Android 2.3 and higher. You can also check out our [API Reference]({{ site.apis.android }}) for more detailed information about our SDK.
 
