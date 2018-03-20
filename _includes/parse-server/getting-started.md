@@ -1,24 +1,25 @@
-# Getting Started
+# 新手入门
 
-Parse Server is an open source version of the Parse backend that can be deployed to any infrastructure that can run Node.js. You can find the source on the [GitHub repo](https://github.com/parse-community/parse-server).
+Parse Server是一个开源版本的Parse后端,可以部署于任何可以运行Node.js的基础设施.你可以在[GitHub repo](https://github.com/parse-community/parse-server)上找到源代码.
 
-* Parse Server is not dependent on the hosted Parse backend.
-* Parse Server uses MongoDB directly, and is not dependent on the Parse hosted database.
-* You can migrate an existing app to your own infrastructure.
-* You can develop and test your app locally using Node.
+* Parse Server 不依赖于 Parse 后端.
+* Parse Server 直接使用 MongoDB, 不依赖于 Parse 数据库服务.
+* 你可以迁移你原有的基于 Parse 服务的应用到你自己的服务器后台.
+* 你可以在本地使用Node搭建服务器调试.
+* 译者注(原来Parse是一个基于云端的后端管理平台。对于开发者而言，Parse提供后端的一站式和一揽子服务：服务器配置、数据库管理、API、影音文件存储，实时消息推送、客户数据分析统计、等等。后公司被Facebook收购,项目被废,所以放出了一个可供无缝迁移的社区版,也就是Parse Server)
 
-### Prerequisites
+### 前提环境
 
 * Node 4.3
-* MongoDB version 2.6.X, 3.0.X or 3.2.X
-* Python 2.x (For Windows users, 2.7.1 is the required version)
-* For deployment, an infrastructure provider like Heroku or AWS
+* MongoDB 版本 2.6.X, 3.0.X or 3.2.X
+* Python 2.x (对于Windows版本, 需要2.7.1)
+* 为了部署, 需要一个类似 Heroku 或者 AWS 主机, 国内推荐阿里云或者腾讯云等等, 译者使用的新浪SAE部署, SAE的MongoDB服务比较便宜
 
-### Compatibility with hosted Parse
+### 和原 Parse 的兼容性
 
-There are a few areas where Parse Server does not provide compatibility with the Parse hosted backend. If you're migrating a hosted Parse.com app to Parse Server, please take some time to carefully read through the list of [compatibility issues](#compatibility-with-parsecom).
+这儿有几处无法提供兼容的Parse后端服务,如果你迁移Parse.com的应用到Parse Server自建服务器,请花一些时间小心阅读如下[兼容性问题](#compatibility-with-parsecom).
 
-The fastest and easiest way to get started is to run MongoDB and Parse Server locally. Use the bootstrap script to set up Parse Server in the current directory.
+入门最快捷的方式是在本地部署 MongoDB 和 Parse Server. 使用下面的启动脚本安装 Parse Server 到当前目录.
 
 ```bash
 $ sh <(curl -fsSL https://raw.githubusercontent.com/parse-community/parse-server/master/bootstrap.sh)
@@ -27,13 +28,13 @@ $ mongodb-runner start
 $ npm start
 ```
 
-You can use any arbitrary string as your application id and master key. These will be used by your clients to authenticate with the Parse Server.
+你可以使用任意字符串作为你的 application id(应用ID) 和 master key(超级KEY). 这两个KEY将在客户端用来获得Parse Server的API调用授权.
 
-That's it! You are now running a standalone version of Parse Server on your machine.
+好了! 你现在得到了一个运行在本地的Parse服务端.
 
-## Saving your first object
+## 保存你的第一个对象
 
-Now that you're running Parse Server, it is time to save your first object. We'll use the [REST API]({{ site.baseUrl }}/rest/guide), but you can easily do the same using any of the [Parse SDKs]({{ site.baseUrl }}/). Run the following:
+现在你成功运行了Parse Server, 是时候保存你的第一个对象了(译者注:文档里面所说的对象,就是存在数据表中的一条数据). 我们将使用 [REST API]({{ site.baseUrl }}/rest/guide), 但是你也可以使用 [Parse SDKs]({{ site.baseUrl }}/)做同样的操作. 运行如下命令:
 
 ```bash
 curl -X POST \
@@ -43,7 +44,7 @@ curl -X POST \
 http://localhost:1337/parse/classes/GameScore
 ```
 
-You should get a response similar to this:
+你将获得类似下面的响应返回结果:
 
 ```js
 {
@@ -52,7 +53,7 @@ You should get a response similar to this:
 }
 ```
 
-You can now retrieve this object directly (make sure to replace `2ntvSpRGIK` with the actual `objectId` you received when the object was created):
+你也可以直接读取刚才存入的对象 (切记把 `2ntvSpRGIK` 换成你执行命令创建对象返回看到的 `objectId`):
 
 ```bash
 $ curl -X GET \
@@ -72,7 +73,7 @@ $ curl -X GET \
 }
 ```
 
-Keeping tracks of individual object ids is not ideal, however. In most cases you will want to run a query over the collection, like so:
+无论如何一直保存着对象的ID来进行读取也不是办法. 在绝大多数场景中你可以执行一个查询来获得你插入的对象, 就像下面这样:
 
 ```
 $ curl -X GET \
@@ -81,7 +82,7 @@ $ curl -X GET \
 ```
 
 ```json
-// The response will provide all the matching objects within the `results` array:
+// 响应会在 `results` 数组中返回所有匹配的数据:
 {
   "results": [
     {
@@ -97,12 +98,12 @@ $ curl -X GET \
 
 ```
 
-To learn more about using saving and querying objects on Parse Server, check out the [documentation]({{ site.baseUrl }}/) for the SDK you will be using in your app.
+了解更多保存和查询对象的相关内容, 查看 [documentation]({{ site.baseUrl }}/).
 
-## Connect your app to Parse Server
+## 让App连接你的Parse服务器
 
-Parse provides SDKs for all the major platforms. Refer to the rest of the Parse Server guide to [learn how to connect your app to Parse Server](#using-parse-sdks-with-parse-server).
+Parse为所有主要的平台提供SDK. 阅读如下文档 [学习如何连接App到Parse Server服务器](#using-parse-sdks-with-parse-server).
 
-## Running Parse Server elsewhere
+## 在别处运行Parse Server
 
-Once you have a better understanding of how the project works, please refer to the [Deploying Parse Server section](#deploying-parse-server) to learn more about additional ways of running Parse Server.
+当你很好的理解了项目如何运行的时候, 阅读如下内容了解 [部署Parse到服务器](#deploying-parse-server) 以学习更多的运行Parse Server服务器的方式.
