@@ -1,11 +1,11 @@
 # 新手入门
 
-Note that we support Android 2.3 and higher. You can also check out our [API Reference]({{ site.apis.android }}) for more detailed information about our SDK.
+注意:SDK仅支持 Android 2.3 以上版本. 你可以查看 [API 文档]({{ site.apis.android }}) 了解SDK更多细节.
 
-## Installation
-**Step 1:** Download `Parse-SDK-Android`
+## 安装
+**步骤 1:** 下载 `Parse-SDK-Android`
 
-Add dependency to the application level `build.gradle` file.
+在应用模块的 `build.gradle` 文件.
 
 ```groovy
 dependencies {
@@ -13,11 +13,11 @@ dependencies {
 }
 ```
 
-**Step 2:** Setup Parse
+**步骤 2:** 设置 Parse
 
-- **Option 1:** Setup in the Manifest
+- **方法 1:** 通过Manifest设置
 
-You may define `com.parse.SERVER_URL` and `com.parse.APPLICATION_ID` meta-data in your `AndroidManifest.xml`:
+你可以在`AndroidManifest.xml`文件中定义 `com.parse.SERVER_URL` 和 `com.parse.APPLICATION_ID` 两个meta-data :
 
 ```xml
 <application ...>
@@ -31,7 +31,7 @@ You may define `com.parse.SERVER_URL` and `com.parse.APPLICATION_ID` meta-data i
 </application>
 ```
 
-Initializing Parse in the `Application`
+在 `Application`中初始化 Parse
 
 ```java
 import com.parse.Parse;
@@ -46,7 +46,7 @@ public class App extends Application {
 }
 ```
 
-- **Option 2:** Setup in the `Application`
+- **方法 2:** 在`Application`中设置
 
 ```java
 import com.parse.Parse;
@@ -65,7 +65,7 @@ public class App extends Application {
 }
 ```
 
- For either option, the custom `Application` class must be registered in `AndroidManifest.xml`:
+ 对于上述方法, 自定义的 `Application` 类必须在 `AndroidManifest.xml`中注册:
  ```xml
  <application
    android:name=".App"
@@ -74,9 +74,9 @@ public class App extends Application {
  </application>
  ```
  
- **Option 3:** Setup permissions in the Manifest
+ **步骤 3:** 在Manifest中设置权限
 
-You have to define `INTERNET`permissions in your `AndroidManifest.xml`:
+你必须在 `AndroidManifest.xml`中注册`INTERNET`访问权限:
 
 ```xml
 <manifest ...>
