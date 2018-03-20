@@ -10,7 +10,7 @@ name: Parse Open Source Docs
 title: Parse Docs
 email: community@parse.com
 description: The open source GitHub page for the Parse platform.
-url: "http://docs.parseplatform.org" # the base hostname & protocol for your site
+url: "http://docs.parseplatform.cn" # the base hostname & protocol for your site
 repository: parse-community/docs
 facebook_username: parseit
 twitter_username:  parseit
