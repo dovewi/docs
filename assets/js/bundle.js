@@ -59,10 +59,10 @@
 	    if (scrollPos > 250) {
 	      if (windowWidth > 1104) {
 	        toc.style.position = 'fixed';
-	        toc.style.left = document.getElementById('getting-started').getBoundingClientRect().left - 230 + 'px';
+	        toc.style.left = document.getElementById('新手入门').getBoundingClientRect().left - 230 + 'px';
 	      } else if (windowWidth > 760) {
 	        toc.style.position = 'fixed';
-	        toc.style.left = document.getElementById('getting-started').getBoundingClientRect().left - 210 + 'px';
+	        toc.style.left = document.getElementById('新手入门').getBoundingClientRect().left - 210 + 'px';
 	      }
 	    } else {
 	      toc.style.position = 'absolute';
