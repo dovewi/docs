@@ -1,5 +1,5 @@
 
-# Geting Started
+# 新手入门
 
 Parse Server是一个开源版本的Parse后端,可以部署于任何可以运行Node.js的基础设施.你可以在[GitHub repo](https://github.com/parse-community/parse-server)上找到源代码.
 
