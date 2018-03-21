@@ -1,14 +1,14 @@
-## Deploying to Heroku and mLab
+## 部署到Heroku(主机)和mLab(MongoDB数据库服务商)
 
-Heroku and mLab provide an easy way to deploy Parse Server, especially if you're new to managing your own backend infrastructure.
+Heroku和mLab提供了快捷的方法去部署Parse Server, 特别是对于服务端管理的新手很方便.
 
-Here are the steps:
+这是部署步骤:
 
-1. Create a repo for your Express app with the Parse Server middleware mounted (you can use our [sample project](https://github.com/parse-community/parse-server-example), or start your own).
-2. Create a Heroku account (if you don’t have one already) and use the Heroku Toolbelt to log in and prepare a new app in the same directory as your Express app. Take a look at Heroku's [Getting Started with Node.js guide](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) for more details.
-3. Use the mLab addon: `heroku addons:create mongolab:sandbox` (or, you can create a Mongo instance yourself, either directly with mLab or your own box)
-4. Use heroku config and note the URI provided by mLab under the var MONGOLAB_URI
-5. Copy this URI and set it as a new config variable: heroku config:set `DATABASE_URI=mongodb://...`
-6. Deploy it: `git push heroku master`
+1. 创建ParseServer中间件并挂载到你的Express应用(你可以使用我们的[示例工程](https://github.com/parse-community/parse-server-example), 也可以创建你自己的).
+2. 创建一个Heroku账户(如果你之前没有的话) 并且使用Heroku Toolbelt(工具链)在你的Express应用目录创建一个新的应用. 查看[Getting Started with Node.js guide](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction)了解更多.
+3. 使用mLab插件: `heroku addons:create mongolab:sandbox` (或者你可以自己直接去mLab创建一个MongoDB实例)
+4. 使用heroku配置工具并找到mLab提供的MONGOLAB_URI 
+5. 复制这个URI并且创建一个新的环境变量: heroku config:set `DATABASE_URI=mongodb://...`
+6. 部署项目代码: `git push heroku master`
 
-You may also refer to the Heroku Dev Center article on [Deploying a Parse Server to Heroku](https://devcenter.heroku.com/articles/deploying-a-parse-server-to-heroku).
+你可以去Heroku开发者中心[Deploying a Parse Server to Heroku](https://devcenter.heroku.com/articles/deploying-a-parse-server-to-heroku)了解更多.
