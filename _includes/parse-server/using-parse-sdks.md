@@ -1,6 +1,6 @@
-# Using Parse SDKs with Parse Server
+# 使用Parse SDK
 
-To use a Parse SDK with Parse Server, change the server URL to your Parse API URL. For example, if you have Parse Server running locally mounted at /parse:
+要使用SDK, 修改下面案例的服务器URL到你自己的Parse服务器挂载的URL. 例如, 你将服务器安装在本地且挂载在/parse路径:
 
 **iOS / OS X / watchOS / tvOS**
 
