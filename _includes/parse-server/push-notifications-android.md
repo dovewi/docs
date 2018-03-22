@@ -1,6 +1,6 @@
-#### Configure Broadcast Receiver and Permissions
+#### 配置广播接收者和权限
 
-Add the following service and broadcast receiver definitions to `AndroidManifest.xml` immediately before the *closing* `</application>` tag:
+添加下面的服务和广播接收者到`AndroidManifest.xml`文件中`</application>`标签之前:
 
 ```xml
 <service android:name="com.parse.PushService" />
@@ -19,26 +19,26 @@ android:permission="com.google.android.c2dm.permission.SEND">
 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
 <!--
-IMPORTANT: Change "com.parse.starter" to match your app's package name.
+重要: 修改 "com.parse.starter" 到你自己应用的包名.
 -->
 <category android:name="com.parse.starter" />
 </intent-filter>
 </receiver>
 
 <!--
-IMPORTANT: Change "YOUR_SENDER_ID" to your GCM Sender Id.
+重要: 修改 "YOUR_SENDER_ID" 到你自己的GCM发送者Id.
 -->
 <meta-data android:name="com.parse.push.gcm_sender_id"
   android:value="id:YOUR_SENDER_ID" />;
 ```
 
-Change the `android:name` attribute of `<category>` element above to match your application's package name.
+修改`<category>`中`android:name` 属性到你自己的包名.
 
-Change "YOUR_SENDER_ID" to the GCM Sender Id you obtained back in Step 1. See our [Android push guide]({{ site.baseUrl }}/android/guide/#setting-up-push) for more details on this attribute.
+修改"YOUR_SENDER_ID"到你在步骤1中获得GCM发送者ID. 浏览我们的[Android推送简介]({{ site.baseUrl }}/android/guide/#setting-up-push)查看更多细节.
 
-**Migrating a hosted Parse app?** Note that you cannot send GCM pushes to old versions of your app that do not contain the `com.parse.push.gcm_sender_id` attribute in your app manifest, since those versions of the app haven't registered for push using your GCM sender ID.
+(迁移应用的内容被译者删除)需要了解的请查阅英文版文档
 
-Also add the permissions below, typically immediately before the *opening* `<application>` tag:
+在`<application>`标签前面添加下面的权限:
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
@@ -61,11 +61,11 @@ to match your app's package name + ".permission.C2D_MESSAGE".
 <uses-permission android:name="com.parse.starter.permission.C2D_MESSAGE" />
 ```
 
-Change the `android:name` attribute in the last two lines of the snippet above to match your application's package name.
+修改最后两行的`android:name`中的前面部分包名为你自己的包名.
 
-#### Register Device for Push Notifications
+#### 注册消息推送的设备
 
-Create an `Installation` object by adding the following to the `onCreate` method of your `Application` class:
+在Application的onCreate方法中创建一个`Installation`对象 
 
 ```java
 // Native: Application.java
@@ -93,9 +93,9 @@ class ParseApplication : Application {
 }
 ```
 
-##### Compile and run!
+##### 编译并运行!
 
-If you configured your app correctly, installation objects will automatically be saved to Parse Server when you run your app. You can run this curl command to verify:
+如果正确完成了上述配置, installation对象将在你运行应用之后自动保存到你的Parse Server服务端. 运行下面的curl命令测试:
 
 ```curl
 curl -X GET \
@@ -104,4 +104,4 @@ curl -X GET \
   http://your_parse_server:1337/parse/installations
 ```
 
-##### Proceed to [Step 4](http://docs.parseplatform.org/parse-server/guide/#4-send-push-notifications).
+##### 进入[步骤 4](http://docs.parseplatform.cn/parse-server/guide/#4-%E5%8F%91%E9%80%81%E6%8E%A8%E9%80%81%E6%B6%88%E6%81%AF).
