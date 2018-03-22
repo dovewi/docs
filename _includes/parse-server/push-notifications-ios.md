@@ -1,6 +1,6 @@
-#### Register Device for Push Notifications
+#### 为推送消息注册设备
 
-Open up your `AppDelegate.swift`, `AppDelegate.m`, or `AppDelegate.cs` file and make your app register for remote notifications by adding the following in your `application:didFinishLaunchingWithOptions:` function:
+打开你的 `AppDelegate.swift`, `AppDelegate.m`, 或 `AppDelegate.cs` 文件并在 `application:didFinishLaunchingWithOptions:` 方法中添加如下内容:
 
 ```swift
 // Swift
@@ -37,7 +37,7 @@ ParsePush.ParsePushNotificationReceived += (object sender, ParsePushNotification
 };
 ```
 
-Store the device token and handle the UI for notifications by adding the following to your main app delegate:
+在你的主应用delegate中添加下面的内容存储设备token并为消息提醒处理界面响应:
 
 ```swift
 // Swift
@@ -96,9 +96,9 @@ public override void ReceivedRemoteNotification(UIApplication application,
 }
 ```
 
-##### Compile and run!
+##### 编译并运行!
 
-If you configured your app correctly, installation objects will automatically be saved to Parse Server when you run your app. You can run this curl command to verify:
+如果你正确配置了, 当你运行应用的时候installation对象将会自动保存到Parse Server.可以运行下面的curl命令测试:
 
 ```curl
 curl -X GET \
@@ -107,4 +107,4 @@ curl -X GET \
   http://your_parse_server:1337/parse/installations
 ```
 
-##### Proceed to [Step 4](http://docs.parseplatform.org/parse-server/guide/#4-send-push-notifications).
+##### 进入[步骤 4](http://docs.parseplatform.cn/parse-server/guide/#4-send-push-notifications).
