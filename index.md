@@ -18,10 +18,10 @@ layout: docs
               <svg class="icon icon-infinity"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#infinity"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="parse-server/guide/">Guide</a></li>
+              <li class="docs-platform__links"><a href="parse-server/guide/">教程</a></li>
           </ul>
           <footer class="docs-platform__footer">
-              <a href="https://npmjs.com/package/parse-server" class="btn btn--outline">Latest Downloads</a>
+              <a href="https://npmjs.com/package/parse-server" class="btn btn--outline">最新版下载</a>
           </footer>
       </div>
       <div class="docs-platform">
@@ -30,11 +30,11 @@ layout: docs
               <svg class="icon icon-apple"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#apple"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="ios/guide/">Guide</a></li>
-              <li class="docs-platform__links"><a href="{{ site.apis.osx }}">API Reference</a></li>
+              <li class="docs-platform__links"><a href="ios/guide/">教程</a></li>
+              <li class="docs-platform__links"><a href="{{ site.apis.osx }}">API 参考</a></li>
           </ul>
           <footer class="docs-platform__footer">
-              <a href="https://github.com/parse-community/Parse-SDK-iOS-OSX/releases/latest" class="btn btn--outline">Latest Downloads</a>
+              <a href="https://github.com/parse-community/Parse-SDK-iOS-OSX/releases/latest" class="btn btn--outline">最新版下载</a>
           </footer>
       </div>
 
@@ -44,11 +44,11 @@ layout: docs
               <svg class="icon icon-android"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#android"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="android/guide/">Guide</a></li>
-              <li class="docs-platform__links"><a href="{{ site.apis.android }}">API Reference</a></li>
+              <li class="docs-platform__links"><a href="android/guide/">教程</a></li>
+              <li class="docs-platform__links"><a href="{{ site.apis.android }}">API 参考</a></li>
           </ul>
           <footer class="docs-platform__footer">
-              <a href="https://github.com/parse-community/Parse-SDK-Android/releases/latest" class="btn btn--outline">Latest Downloads</a>
+              <a href="https://github.com/parse-community/Parse-SDK-Android/releases/latest" class="btn btn--outline">最新版下载</a>
           </footer>
       </div>
 
@@ -58,11 +58,11 @@ layout: docs
               <svg class="icon icon-js"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#javascript"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="js/guide/">Guide</a></li>
-              <li class="docs-platform__links"><a href="{{ site.apis.js }}">API Reference</a></li>
+              <li class="docs-platform__links"><a href="js/guide/">教程</a></li>
+              <li class="docs-platform__links"><a href="{{ site.apis.js }}">API 参考</a></li>
           </ul>
           <footer class="docs-platform__footer">
-              <a href="https://github.com/parse-community/Parse-SDK-JS/releases/latest" class="btn btn--outline">Latest Downloads</a>
+              <a href="https://github.com/parse-community/Parse-SDK-JS/releases/latest" class="btn btn--outline">最新版下载</a>
           </footer>
       </div>
 
@@ -72,11 +72,11 @@ layout: docs
               <svg class="icon icon-dotnet"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#dotnet"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="dotnet/guide/">Guide</a></li>
-              <li class="docs-platform__links"><a href="{{ site.apis.dotnet }}">API Reference</a></li>
+              <li class="docs-platform__links"><a href="dotnet/guide/">教程</a></li>
+              <li class="docs-platform__links"><a href="{{ site.apis.dotnet }}">API 参考</a></li>
           </ul>
           <footer class="docs-platform__footer">
-              <a href="https://github.com/parse-community/Parse-SDK-dotNET/releases/latest" class="btn btn--outline">Latest Downloads</a>
+              <a href="https://github.com/parse-community/Parse-SDK-dotNET/releases/latest" class="btn btn--outline">最新版下载</a>
           </footer>
       </div>
 
@@ -86,11 +86,11 @@ layout: docs
               <svg class="icon icon-osx"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#apple"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="macos/guide/">Guide</a></li>
-              <li class="docs-platform__links"><a href="{{ site.apis.osx }}">API Reference</a></li>
+              <li class="docs-platform__links"><a href="macos/guide/">教程</a></li>
+              <li class="docs-platform__links"><a href="{{ site.apis.osx }}">API 参考</a></li>
           </ul>
           <footer class="docs-platform__footer">
-              <a href="https://github.com/parse-community/Parse-SDK-iOS-OSX/releases/latest" class="btn btn--outline">Latest Downloads</a>
+              <a href="https://github.com/parse-community/Parse-SDK-iOS-OSX/releases/latest" class="btn btn--outline">最新版下载</a>
           </footer>
       </div>
 
@@ -100,11 +100,11 @@ layout: docs
               <svg class="icon icon-unity"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#unity"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="unity/guide/">Guide</a></li>
-              <li class="docs-platform__links"><a href="{{ site.apis.dotnet }}">API Reference</a></li>
+              <li class="docs-platform__links"><a href="unity/guide/">教程</a></li>
+              <li class="docs-platform__links"><a href="{{ site.apis.dotnet }}">API 参考</a></li>
           </ul>
           <footer class="docs-platform__footer">
-              <a href="https://github.com/parse-community/Parse-SDK-dotNET/releases/latest" class="btn btn--outline">Latest Downloads</a>
+              <a href="https://github.com/parse-community/Parse-SDK-dotNET/releases/latest" class="btn btn--outline">最新版下载</a>
           </footer>
       </div>
 
@@ -114,11 +114,11 @@ layout: docs
               <svg class="icon icon-php"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#php"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="php/guide/">Guide</a></li>
-              <li class="docs-platform__links"><a href="{{ site.apis.php }}">API Reference</a></li>
+              <li class="docs-platform__links"><a href="php/guide/">教程</a></li>
+              <li class="docs-platform__links"><a href="{{ site.apis.php }}">API 参考</a></li>
           </ul>
           <footer class="docs-platform__footer">
-              <a href="https://github.com/parse-community/parse-php-sdk/releases" class="btn btn--outline">Latest Downloads</a>
+              <a href="https://github.com/parse-community/parse-php-sdk/releases" class="btn btn--outline">最新版下载</a>
           </footer>
       </div>
 
@@ -128,11 +128,11 @@ layout: docs
               <svg class="icon icon-arduino"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#arduino"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="arduino/guide/">Guide</a></li>
-              <li class="docs-platform__links"><a href="https://parse-community.github.io/Parse-SDK-Arduino/api/">API Reference</a></li>
+              <li class="docs-platform__links"><a href="arduino/guide/">教程</a></li>
+              <li class="docs-platform__links"><a href="https://parse-community.github.io/Parse-SDK-Arduino/api/">API 参考</a></li>
           </ul>
           <footer class="docs-platform__footer">
-              <a href="https://github.com/parse-community/Parse-SDK-Arduino/releases/latest" class="btn btn--outline">Latest Downloads</a>
+              <a href="https://github.com/parse-community/Parse-SDK-Arduino/releases/latest" class="btn btn--outline">最新版下载</a>
           </footer>
       </div>
 
@@ -142,21 +142,21 @@ layout: docs
               <svg class="icon icon-embedded_c"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#embedded_c"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="embedded_c/guide/">Guide</a></li>
-              <li class="docs-platform__links"><a href="https://parse-community.github.io/parse-embedded-sdks/api/">API Reference</a></li>
+              <li class="docs-platform__links"><a href="embedded_c/guide/">教程</a></li>
+              <li class="docs-platform__links"><a href="https://parse-community.github.io/parse-embedded-sdks/api/">API 参考</a></li>
           </ul>
           <footer class="docs-platform__footer">
-              <a href="https://github.com/parse-community/parse-embedded-sdks/releases/latest" class="btn btn--outline">Latest Downloads</a>
+              <a href="https://github.com/parse-community/parse-embedded-sdks/releases/latest" class="btn btn--outline">最新版下载</a>
           </footer>
       </div>
 
       <div class="docs-platform">
           <header class="docs-platform__header">
-              <span class="docs-platform__name">Cloud Code(云代码)</span>
+              <span class="docs-platform__name">Cloud Code</span>
               <svg class="icon icon-cloudcode"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#cloudcode"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="cloudcode/guide/">Guide</a></li>
+              <li class="docs-platform__links"><a href="cloudcode/guide/">教程</a></li>
           </ul>
           <footer class="docs-platform__footer">
           </footer>
@@ -168,7 +168,7 @@ layout: docs
               <svg class="icon icon-rest"><use xlink:href="{{ site.baseurl }}/assets/symbols.svg#rest"></use></svg>
           </header>
           <ul class="docs-platform__links">
-              <li class="docs-platform__links"><a href="rest/guide/">Guide</a></li>
+              <li class="docs-platform__links"><a href="rest/guide/">教程</a></li>
           </ul>
           <footer class="docs-platform__footer">
           </footer>
