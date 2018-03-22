@@ -247,7 +247,7 @@ APNS Notification transmitted to:7a7d2864598e1f65e6e02135245b7daf8ea510514e6376f
 
 这些日志意味着GCM和APNS连接正常工作.
 
-## Push Adapter
+## 推送适配器
 
 Parse Server提供`PushAdapter`抽象消息通知适配器. 默认的实现是`ParsePushAdapter`, 使用GCM和APNS. 如果你想使用其它的推送提供商,比如百度云推送等, 你可以自己实现一个`PushAdapter`.你的适配器必须要实现用来发送`data`到`installations`(设备)的`send(data, installations)`方法. 你可以参照 `ParsePushAdapter`. 当你实现了你自己的`PushAdapter`之后, 你可以使用如下配置设置你自己的适配器
 
@@ -282,8 +282,8 @@ var server = new ParseServer({
 
 ### 静默通知
 
-(对于迁移Parse.com的应用的提醒不翻译)If you have migrated from Parse.com Push and you are seeing situations where silent notifications are failing to deliver, please ensure that your payload is setting the `content-available` attribute to Int(1) and not "1". This value will be explicitly checked.
+(有一段对于迁移Parse.com的应用的提醒不翻译,对于国内用户没有什么卵用,过时了).
 
 ### PPNS
 
-* [PPNS Protocol Specification (for Parse IoT devices)](https://github.com/parse-community/parse-server/wiki/PPNS-Protocol-Specification)
+* [PPNS协议定义(对于Parse物联网设备)](https://github.com/parse-community/parse-server/wiki/PPNS-Protocol-Specification)
