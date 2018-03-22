@@ -107,4 +107,4 @@ curl -X GET \
   http://your_parse_server:1337/parse/installations
 ```
 
-##### 进入[步骤 4](http://docs.parseplatform.cn/parse-server/guide/#4-send-push-notifications).
+##### 进入[步骤 4](http://docs.parseplatform.cn/parse-server/guide/#4-发送推送消息).
