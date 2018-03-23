@@ -1,10 +1,10 @@
-# Class Level Permissions
+# 类级权限
 
-Class level permissions are a security feature from that allows one to restrict access on a broader way than the [ACL based permissions]({{ site.baseUrl }}/rest/guide/#security).
+类级权限是一种比[ACL权限管理]({{ site.baseUrl }}/rest/guide/#security)更广泛的限制访问的安全特性.
 
 ## `requiresAuthentication`
 
-If you want to restrict access to a full class to only authenticated users, you can use the `requiresAuthentication` class level permission. For example, you want to allow your **authenticated users** to `find` and `get` objects from your application and your admin users to have all privileges, you would set the CLP:
+如果你想限制某个类只给授权的用户访问, 你可以使用`requiresAuthentication`类级别权限. 例如你希望你的 **授权用户** 在你的应用中去 `find` 和 `get` 对象 和你的管理员拥有所有权限, 你可以设置CLP:
 
 ```
 // PUT http://localhost:1337/schemas/:className
@@ -28,4 +28,4 @@ If you want to restrict access to a full class to only authenticated users, you 
 }
 ```
 
-Note that this is in no way securing your content. If you allow anyone to log in to your server, any client will be able to query this object.
+请注意，如果你允许任何人登陆你的服务器,这绝不会保护您的内容,任何用户都可以查询这个对象. 
