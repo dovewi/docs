@@ -1,33 +1,33 @@
-# Configuring File Adapters
+# 配置文件适配器
 
-Parse Server allows developers to choose from several options when hosting files:
+Parse Server 允许开发人员在托管文件时从多个选项中选择:
 
-* `GridStoreAdapter`, which is backed by MongoDB;
-* `S3Adapter`, which is backed by [Amazon S3](https://aws.amazon.com/s3/); or
-* `GCSAdapter`, which is backed by [Google Cloud Storage](https://cloud.google.com/storage/)
+* `GridStoreAdapter`, 由 MongoDB 支持;
+* `S3Adapter`, 由[Amazon S3](https://aws.amazon.com/s3/)支持; 
+* `GCSAdapter`, 由[Google云存储](https://cloud.google.com/storage/)支持;
 
-`GridStoreAdapter` is used by default and requires no setup, but if you're interested in using S3 or Google Cloud Storage, additional configuration information is available below.
+`GridStoreAdapter` 默认使用且不需要设置,直接存储在MongoDB中, 如果你想使用S3或者谷歌云存储, 额外的配置信息如下.
 
-When using files on Parse, you will need to use the `publicServerURL` option in your Parse Server config. This is the URL that files will be accessed from, so it should be a URL that resolves to your Parse Server. Make sure to include your mount point in this URL.
+当你在Parse中使用文件的时候, 你必须在你的Parse Server配置中使用`publicServerURL`选项. 这是可以从中访问文件的网址, 所以它应该是一个解析到你的Parse服务器的url. 要确保这个路径包含你的Parse API挂载点,比如前面例子中的"/parse".
 
-## Configuring `S3Adapter`
+## 配置 `S3Adapter`
 
-If you'd like to use Amazon S3, follow these instructions to configure Parse Server to use `S3Adapter`.
+如果你想使用Amazon S3, 下面是Parse Server如何配置使用`S3Adapter`的说明.
 
-### Set up your bucket and permissions
+### 设置你的bucket和权限
 
-First you will create a bucket in S3 to hold these files.
+首先你要在S3创建一个bucket来存储文件.
 
-1. Log into your [AWS account](https://console.aws.amazon.com/) or create a new one.
-2. Head to the S3 service and choose **Create Bucket**
-3. Fill out a unique **Bucket Name** and click **Create**. The bucket name should not contain any period '.' for `directAccess` to work. All other defaults are OK.
-4. Now head to the Identity and Access Management (IAM) service.
-5. Click the **Users** tab, then **Create New User**.
-6. Fill out at least one user name and make sure **Generate an access key for each user** is selected before clicking **Create**.
-7. Make sure to **Download Credentials** on the next screen.
-8. Now select the **Policies** tab, then **Create Policy**.
-9. Select **Create Your Own Policy**, fill out a **Policy Name**.
-10. Copy the following config in **Policy Document**, changing **BUCKET_NAME** for the name of the bucket you created earlier. (note: this is a little more permissive than Parse Server needs, but it works for now)
+1. 登陆你的[AWS 账户](https://console.aws.amazon.com/) 或者注册一个新账号.
+2. 前往S3服务并选择**Create Bucket**(创建Bucket)
+3. 填入一个唯一的**Bucket Name**并点击**Create**.
+4. 然后去Identity and Access Management (IAM)身份授权管理服务.
+5. 点击**Users**标签, 然后**Create New User**.
+6. 至少填写一个用户名并勾选**Generate an access key for each user**然后点击**Create**.
+7. 确认**Download Credentials**在下一屏.
+8. 然后选中**Policies**标签, 然后点击 **Create Policy**.
+9. 选择 **Create Your Own Policy**, 填入一个**Policy Name**.
+10. 复制下面的配置到**Policy Document**, 修改 **BUCKET_NAME** 为你之前创建的bucket的名字. (note: 比Parse Server必须的要宽松一些, 但是已经可以工作了应该)
 
     ```json
     {
@@ -46,27 +46,27 @@ First you will create a bucket in S3 to hold these files.
          ]
      }
     ```
-11. Make sure to **Validate Policy** first, then click **Create Policy**.
-12. Go back to the **Users** tab and select the user you created earlier.
-13. In Permissions, select **Attach Policy** and find the policy we just created to attach it.
+11. 首先确保执行**Validate Policy**, 然后点击**Create Policy**.
+12. 返回**Users** 标签选择你之前创建的用户.
+13. 在权限管理中, 选择 **Attach Policy** 找到我们刚刚创建的Policy并添加上.
 
-### Configuration options
+### 配置选项
 
-Writing to your Amazon S3 bucket from Parse Server is as simple as configuring and using the S3 files adapter.
+把Parse Server的文件保存到S3创建的BUCKET非常容易,使用S3文件适配器即可.
 
-#### Using environment variables
+#### 使用环境变量
 
-If you're running a standalone Parse Server, you can use the following environment variables to configure the S3 adapter:
+如果你运行独立的Parse Server, 你可以使用下面的环境变量来配置S3 适配器:
 
 | Variable Name | Description | Notes |
 | ------------- | ----------- | ----- |
-| PARSE_SERVER_FILES_ADAPTER  | Set this variable to './Files/S3Adapter.js'. | Required |
-| S3_ACCESS_KEY               | The AWS access key for a user that has the required permissions. | Required |
-| S3_SECRET_KEY               | The AWS secret key for the user. | Required |
-| S3_BUCKET                   | The name of your S3 bucket. Needs to be globally unique in all of S3. | Required |
-| S3_REGION                   | The AWS region to connect to. | Optional. Default: 'us-east-1' |
-| S3_BUCKET_PREFIX            | Create all the files with the specified prefix added to the filename. Can be used to put all the files for an app in a folder with 'folder/'. | Optional. |
-| S3_DIRECT_ACCESS            | Whether reads are going directly to S3 or proxied through your Parse Server. If set to true, files will be made publicly accessible, and reads will not be proxied. | Optional. Default: false |
+| PARSE_SERVER_FILES_ADAPTER  | 设置为 './Files/S3Adapter.js'. | 必须 |
+| S3_ACCESS_KEY               | 有对应bucket权限的用户的Access Key. | 必须 |
+| S3_SECRET_KEY               | 上述用户的Secret Key. | 必须 |
+| S3_BUCKET                   | bucket名称 | 必须 |
+| S3_REGION                   | AWS 区域. | 可选. 默认: 'us-east-1' |
+| S3_BUCKET_PREFIX            | 文件的前缀. 使用 'folder/'这样类似的前缀可以把所有文件放在folder文件夹下面 | 可选. |
+| S3_DIRECT_ACCESS            | 文件通过Parse Server转发还是直接访问. 如果设置成true, 文件将被设置为公共可读, 不必使用服务器代理转发读取. | 可选. 默认: false |
 
 #### Passing as options
 
